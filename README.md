@@ -1,3 +1,37 @@
+# This repo is to demonstrate a bug with Strapi v5
+
+To see the issue:
+* Clone this repo: `git clone https://github.com/CodeTotee/strapi-dz-crash`
+* Install: `yarn install`
+* start strapi: `yarn develop`
+* Navigate to: `http://localhost:1337/admin/content-manager/single-types/api::home.home`
+
+Crash.
+
+Here are the steps I used to create this crash:
+* Install and intialize a fresh Strapi v5 project
+```
+npx create-strapi-app@beta --use-yarn
+cd strapi-dz-crash
+yarn
+yarn develop
+```
+* Open admin at `http://localhost:1337` and configure admin email
+* Navigate to Content-Type Builder
+* Create a component called 'comp' with a single text field 'text'
+* Create a Single Type called 'home' with a single Dynamic Zone that includes the 'comp' created above
+* Save
+  * Note: At this point, things still work.  If you then navigate to Content Manager and select 'home', it will display an empty DZ.
+* Navigate back to the Content-Type Builder
+* Navigate to the 'home' Single Type
+* Add a single Text type called 'text'
+* Navigate to Content Manager
+* It will crash with an error saying `Cannot read properties of undefined (reading 'push')`
+
+
+
+
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
