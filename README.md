@@ -8,6 +8,8 @@ To see the issue:
 
 Crash.
 
+Note: You will need to supply your own .env file to set the API keys and such, as they're not in the repository.  Alternatively, you can create from scratch using the instructions below.
+
 Here are the steps I used to create this crash:
 * Install and intialize a fresh Strapi v5 project
 ```
