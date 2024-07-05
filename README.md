@@ -11,9 +11,8 @@ Crash.
 Here are the steps I used to create this crash:
 * Install and intialize a fresh Strapi v5 project
 ```
-npx create-strapi-app@beta --use-yarn
+npx create-strapi-app@5.0.0-rc.2 strapi-dz-crash --use-yarn
 cd strapi-dz-crash
-yarn
 yarn develop
 ```
 * Open admin at `http://localhost:1337` and configure admin email
@@ -21,13 +20,13 @@ yarn develop
 * Create a component called 'comp' with a single text field 'text'
 * Create a Single Type called 'home' with a single Dynamic Zone that includes the 'comp' created above
 * Save
-  * Note: At this point, things still work.  If you then navigate to Content Manager and select 'home', it will display an empty DZ.
 * Navigate back to the Content-Type Builder
 * Navigate to the 'home' Single Type
 * Add a single Text type called 'text'
 * Navigate to Content Manager
 * It will crash with an error saying `Cannot read properties of undefined (reading 'push')`
 
+Note: You may see other errors along the way of replicating this issue.  I haven't logged those, but rather just went past them by refreshing the browser window.
 
 
 
